@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@300..700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand';
+}
+
+.header {
+  font-family: 'Monoton';
+  padding: 20px;
+  font-size: 3rem;
+  text-align: center;
+  background-color: #eaa017;
+}
+
+.header span {
+  position: relative;
+  bottom: 8px;
+  font-size: 2.5rem;
+}
+
+.form {
+  background-color: #ff7b00;
+  background-color: #d36e26;
+}
+
+.main {
+  background-color: #543d26;
+}
+
+.footer {
+  background-color: #0bffae;
+}
