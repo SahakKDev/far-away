@@ -30,6 +30,22 @@ function App() {
     );
   }
 
+  function onClear() {
+    setItems([]);
+    setSortBy('input');
+  }
+
+  let stats = 'Start adding some items to your packing list. 🚀';
+
+  if (items.length && items.every((item) => item.packed)) {
+    stats = 'You got everything! Ready to go! 🛫';
+  } else if (items.length) {
+    const packedCount = items.filter((item) => item.packed === true).length;
+    const packedPercent = Math.round((packedCount / items.length) * 100);
+
+    stats = `You have ${items.length} items on your list, and you already packed ${packedCount} (${packedPercent}%). 🧳`;
+  }
+
   return (
     <div className='app'>
       <Header />
@@ -43,10 +59,14 @@ function App() {
           {items}
         </Items>
 
-        <Actions sortBy={sortBy} changeSorting={changeSortBy} />
+        <Actions
+          sortBy={sortBy}
+          changeSorting={changeSortBy}
+          handleClearList={onClear}
+        />
       </main>
 
-      <Footer>Start adding some items to your packing list 🚀</Footer>
+      <Footer>{stats}</Footer>
     </div>
   );
 }

@@ -7,7 +7,7 @@ const sortOptions = [
   { key: 'status', value: 'sort by packed status' },
 ];
 
-export default function Actions({ sortBy, changeSorting }) {
+export default function Actions({ sortBy, changeSorting, handleClearList }) {
   function handleSortChange(e) {
     changeSorting(e.target.value);
   }
@@ -22,7 +22,9 @@ export default function Actions({ sortBy, changeSorting }) {
         {sortOptions}
       </Select>
 
-      <Button className='btn-secondary'>clear list</Button>
+      <Button className='btn-secondary' onClick={handleClearList}>
+        clear list
+      </Button>
     </div>
   );
 }

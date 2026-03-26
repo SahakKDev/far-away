@@ -63,6 +63,8 @@ main {
   width: 100%;
   justify-items: center;
   row-gap: 20px;
+  max-height: 25rem;
+  overflow-y: auto;
 }
 
 .item {
