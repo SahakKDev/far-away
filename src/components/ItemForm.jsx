@@ -19,7 +19,7 @@ export default function ItemForm({ onAdd }) {
 
     if (!item.trim().length) return;
 
-    onAdd({ id: new Date().toISOString(), count, name: item });
+    onAdd({ id: new Date().toISOString(), count, name: item, packed: false });
 
     setCount(1);
     setItem('');
@@ -31,7 +31,7 @@ export default function ItemForm({ onAdd }) {
 
       <form className=''>
         <Select value={count} onChange={handleCountChange}>
-          {Array.from(new Array(12), (_, i) => i + 1)}
+          {Array.from(new Array(12), (_, i) => ({ key: i + 1, value: i + 1 }))}
         </Select>
 
         <input

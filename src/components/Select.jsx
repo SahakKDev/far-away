@@ -3,8 +3,8 @@ export default function Select({ children, className, ...props }) {
     <select {...props} className={className}>
       {children.map((child) => {
         return (
-          <option key={child} value={child}>
-            {child}
+          <option className="option" key={child.key} value={child.key}>
+            {child.value}
           </option>
         );
       })}

@@ -1,8 +1,10 @@
-export default function Item({ item, onRemove }) {
+export default function Item({ item, onRemove, onStatusChange }) {
   return (
     <p className='item'>
-      <input type='checkbox' />
-      {item.count} {item.name}{' '}
+      <input type='checkbox' onChange={onStatusChange.bind(item.id)} />
+      <p className={item.packed ? 'packed' : ''}>
+        {item.count} {item.name}
+      </p>
       <span onClick={onRemove.bind(item.id)} className='remove-icon'>
         ❌
       </span>

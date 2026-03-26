@@ -7,13 +7,27 @@ import Items from './components/Items';
 
 function App() {
   const [items, setItems] = useState([]);
+  const [sortBy, setSortBy] = useState('input');
 
   function handleAddNewItem(item) {
-    setItems(prevItems => [...prevItems, item])
+    setItems((prevItems) => [...prevItems, item]);
   }
 
   function handleRemoveItem(id) {
-    setItems(prevItems => prevItems.filter(item => item.id !== id))
+    setItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  }
+
+  function changeSortBy(sortBy) {
+    setSortBy(sortBy);
+  }
+
+  function handleStatusChange() {
+    setItems((prevItems) =>
+      prevItems.map((item) => ({
+        ...item,
+        packed: item.id === this ? !item.packed : item.packed,
+      })),
+    );
   }
 
   return (
@@ -21,9 +35,15 @@ function App() {
       <Header />
       <ItemForm onAdd={handleAddNewItem} />
       <main>
-        <Items onRemove={handleRemoveItem}>{items}</Items>
+        <Items
+          sortBy={sortBy}
+          onRemove={handleRemoveItem}
+          onStatusChange={handleStatusChange}
+        >
+          {items}
+        </Items>
 
-        <Actions />
+        <Actions sortBy={sortBy} changeSorting={changeSortBy} />
       </main>
 
       <Footer>Start adding some items to your packing list 🚀</Footer>
