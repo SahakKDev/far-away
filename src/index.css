@@ -10,12 +10,18 @@ body {
   font-family: 'Quicksand';
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .header {
   font-family: 'Monoton';
   padding: 20px;
   font-size: 3rem;
   text-align: center;
-  background-color: #eaa017;
+  background-color: #ffa500;
 }
 
 .header span {
@@ -24,15 +30,76 @@ body {
   font-size: 2.5rem;
 }
 
-.form {
+.item-form {
   background-color: #ff7b00;
-  background-color: #d36e26;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 25px;
 }
 
-.main {
+.item-form form {
+  display: flex;
+  gap: 10px;
+}
+
+main {
+  flex-grow: 1;
   background-color: #543d26;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 30px;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+
+}
+
+.items {
+  color: #f5f5dc;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  justify-items: center;
+  row-gap: 20px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  align-self: center;
 }
 
 .footer {
+  background-color: #0bffae;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+input,
+button,
+select {
+  padding: 4px 8px;
+  border-radius: 60px;
+  border: none;
+  outline: none;
+  font-size: 0.7rem;
+}
+
+select {
+  cursor: pointer;
+}
+
+.button {
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-primary {
   background-color: #0bffae;
 }

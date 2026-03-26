@@ -1,18 +1,23 @@
+import Actions from "./components/Actions";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ItemForm from "./components/ItemForm";
+import Items from "./components/Items";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <Header />
-      <form>What do you need for your 😍 trip?</form>
+      <ItemForm />
       <main>
-        {/* ITEMS */}
+        <Items />
 
-        {/* ACTIONS */}
+        <Actions />
+      
       </main>
 
-      <footer>Start adding some items to your packing list 🚀</footer>
-    </>
+      <Footer>Start adding some items to your packing list 🚀</Footer>
+    </div>
   );
 }
 
