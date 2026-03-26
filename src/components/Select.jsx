@@ -1,6 +1,6 @@
-export default function Select({ children }) {
+export default function Select({ children, className, ...props }) {
   return (
-    <select>
+    <select {...props} className={className}>
       {children.map((child) => {
         return (
           <option key={child} value={child}>

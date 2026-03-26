@@ -3,7 +3,7 @@ import Select from "./Select";
 
 export default function Actions() {
   return <div className="actions">
-    <Select>
+    <Select className='btn-secondary'>
       {[1, 2, 3]}
     </Select>
 
